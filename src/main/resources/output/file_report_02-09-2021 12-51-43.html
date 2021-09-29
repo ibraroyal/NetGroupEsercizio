@@ -1,0 +1,1777 @@
+
+<!DOCTYPE html>
+<html>
+
+
+<head>
+	<meta charset='utf-8' /> 
+	<meta name='description' content='' />
+	<meta name='robots' content='noodp, noydir' />
+	<meta name='viewport' content='width=device-width, initial-scale=1' />
+	<meta id="timeStampFormat" name="timeStampFormat" content='MMM d, yyyy hh:mm:ss a'/>
+	
+	<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600' rel='stylesheet' type='text/css' />
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+
+		<link href='https://cdn.rawgit.com/anshooarora/extentreports-java/b4a58fcfd1e137bd9287244035a7c80d3d73b3af/dist/css/extent.css' type='text/css' rel='stylesheet' />
+	
+	<title>ExtentReports</title>
+
+	<style type='text/css'>
+	</style>
+</head>
+
+	<body class='extent standard default hide-overflow '>
+		<div id='theme-selector' alt='Click to toggle theme. To enable by default, use theme configuration.' title='Click to toggle theme. To enable by default, use theme configuration.'>
+			<span><i class='material-icons'>desktop_windows</i></span>
+		</div>
+
+<nav>
+	<div class="nav-wrapper">
+		<a href="#!" class="brand-logo blue darken-3">Extent</a>
+
+		<!-- slideout menu -->
+		<ul id='slide-out' class='side-nav fixed hide-on-med-and-down'>
+			<li class='waves-effect active'><a href='#!' view='test-view' onclick="configureView(0);chartsView('test');"><i class='material-icons'>dashboard</i></a></li>
+						<li class='waves-effect'><a href='#!' onclick="configureView(-1);chartsView('dashboard');" view='dashboard-view'><i class='material-icons'>track_changes</i></i></a></li>
+		</ul>
+
+		<!-- report name -->
+		<span class='report-name'>ExtentReports</span>
+		
+		<!-- report headline -->
+		<span class='report-headline'></span>
+
+		<!-- nav-right -->
+		<ul id='nav-mobile' class='right hide-on-med-and-down nav-right'>
+			<li>
+                <a href='#!'>
+                    <span class='label suite-start-time blue darken-3'>Sep 2, 2021 12:51:43 PM</span>
+				</a>
+			</li>
+			<li>
+                <a href='#!'>
+                    <span class='label blue darken-3'>3.1.5</span>
+				</a>
+			</li>
+		</ul>
+	</div>
+</nav>
+
+		<!-- container -->
+		<div class='container'>
+
+<div id='test-view' class='view'>
+				
+	<section id='controls'>
+		<div class='controls grey lighten-4'>
+			<!-- test toggle -->
+			<div class='chip transparent'>
+				<a class='dropdown-button tests-toggle' data-activates='tests-toggle' data-constrainwidth='true' data-beloworigin='true' data-hover='true' href='#'>
+					<i class='material-icons'>warning</i> Status
+				</a>
+				<ul id='tests-toggle' class='dropdown-content'>
+											<li status='pass'><a href='#!'>Pass <i class='material-icons green-text'>check_circle</i></a></li>
+						<li status='error'><a href='#!'>Error <i class='material-icons red-text lighten-2'>error</i></a></li>
+						<li status='warning'><a href='#!'>Warning <i class='material-icons orange-text'>warning</i></a></li>
+					<li class='divider'></li>
+					<li status='clear' clear='true'><a href='#!'>Clear Filters <i class='material-icons'>clear</i></a></li>
+				</ul>
+			</div>
+			<!-- test toggle -->
+
+			<!-- category toggle -->
+			<!-- category toggle -->
+
+			<!-- clear filters -->
+			<div class='chip transparent hide'>
+				<a class='' id='clear-filters' alt='Clear Filters' title='Clear Filters'>
+					<i class='material-icons'>close</i> Clear
+				</a>
+			</div>
+			<!-- clear filters -->
+
+			<!-- enable dashboard -->
+			<div id='toggle-test-view-charts' class='chip transparent'>
+				<a class='pink-text' id='enable-dashboard' alt='Enable Dashboard' title='Enable Dashboard'>
+					<i class='material-icons'>track_changes</i> Dashboard
+				</a>
+			</div>
+			<!-- enable dashboard -->
+
+			<!-- search -->
+			<div class='chip transparent' alt='Search Tests' title='Search Tests'>
+				<a href="#" class='search-div'>
+					<i class='material-icons'>search</i> Search
+				</a>
+
+				<div class='input-field left hide'>
+					<input id='search-tests' type='text' class='validate browser-default' placeholder='Search Tests...'>
+				</div>
+				
+			</div>
+			<!-- search -->
+		</div>
+	</section>
+
+
+<div id='test-view-charts' class='subview-full'>
+	<div id='charts-row' class='row nm-v nm-h'>
+		<div class='col s12 m6 l6 np-h'>
+			<div class='card-panel nm-v'>
+				<div class='left panel-name'>Tests</div>
+				<div class='chart-box'>
+					<canvas id='parent-analysis' width='100' height='80'></canvas>
+				</div>
+				<div class='block text-small'>
+					<span class='tooltipped' data-position='top' data-tooltip='0%'><span class='strong'>0</span> test(s) passed</span>
+				</div>
+				<div class='block text-small'>
+					<span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> test(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='100%'>3</span> others
+				</div>
+			</div>
+		</div>
+		
+		<div class='col s12 m6 l6 np-h'>
+			<div class='card-panel nm-v'>
+				<div class='left panel-name'>Steps</div>
+				<div class='chart-box'>
+					<canvas id='child-analysis' width='100' height='80'></canvas>
+				</div>
+				<div class='block text-small'>
+					<span class='tooltipped' data-position='top' data-tooltip='74.035%'><span class='strong'>211</span> step(s) passed</span>
+				</div>
+				<div class='block text-small'>
+					<span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> step(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='25.965%'>74</span> others
+				</div>
+			</div>
+		</div>
+		
+	</div>
+</div>
+
+	<div class='subview-left left'>
+		
+		<div class='view-summary'>
+			<h5>Tests</h5>
+			<ul id='test-collection' class='test-collection'>
+				
+				
+				<li class='test displayed active  warning' status='warning' bdd='false' test-id='1'>
+					<div class='test-heading'>
+						<span class='test-name'>https://www.siinfo.eu/</span>
+						<span class='test-time'>Sep 2, 2021 12:51:54 PM</span>
+						<span class='test-status right warning'>warning</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Sep 2, 2021 12:51:54 PM</span>
+	<span class='label end-time'>Sep 2, 2021 12:52:18 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 24s+577ms</span>
+</div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>12:51:56 PM</td>
+					<td class='step-details'>favicon presente: https://www.siinfo.eu/wp-content/uploads/sites/4/2021/05/cropped-siinfo_logo_bg-32x32.png</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>12:51:56 PM</td>
+					<td class='step-details'>favicon presente: https://www.siinfo.eu/wp-content/uploads/sites/4/2021/05/cropped-siinfo_logo_bg-192x192.png</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>12:51:56 PM</td>
+					<td class='step-details'>title presente: Home - SIINFO : Data In Emotion</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>12:51:56 PM</td>
+					<td class='step-details'>descrizione presente: SIINFO help you harness the power of modern methods to bring knowledge out of all your data to make smart business decisions</td>
+				</tr>
+				<tr class='log' status='warning'>
+					<td class='status warning' title='warning' alt='warning'><i class='material-icons'>warning</i></td>
+					<td class='timestamp'>12:51:56 PM</td>
+					<td class='step-details'>href contente url di instagram: tel:+393801599537, con un target uguale a _blank</td>
+				</tr>
+				<tr class='log' status='warning'>
+					<td class='status warning' title='warning' alt='warning'><i class='material-icons'>warning</i></td>
+					<td class='timestamp'>12:51:56 PM</td>
+					<td class='step-details'>href contente url di instagram: mailto:info@siinfo.eu, con un target uguale a _blank</td>
+				</tr>
+				<tr class='log' status='warning'>
+					<td class='status warning' title='warning' alt='warning'><i class='material-icons'>warning</i></td>
+					<td class='timestamp'>12:51:56 PM</td>
+					<td class='step-details'>href contente url di linkedin: https://it.linkedin.com/company/siinfo, con un target uguale a _blank</td>
+				</tr>
+				<tr class='log' status='warning'>
+					<td class='status warning' title='warning' alt='warning'><i class='material-icons'>warning</i></td>
+					<td class='timestamp'>12:51:57 PM</td>
+					<td class='step-details'>href contente url di facebook: https://www.facebook.com/SIINFOSRL/, con un target uguale a _blank</td>
+				</tr>
+				<tr class='log' status='warning'>
+					<td class='status warning' title='warning' alt='warning'><i class='material-icons'>warning</i></td>
+					<td class='timestamp'>12:51:58 PM</td>
+					<td class='step-details'>href contente url di linkedin: https://it.linkedin.com/company/siinfo, con un target uguale a _blank</td>
+				</tr>
+				<tr class='log' status='warning'>
+					<td class='status warning' title='warning' alt='warning'><i class='material-icons'>warning</i></td>
+					<td class='timestamp'>12:51:58 PM</td>
+					<td class='step-details'>href contente url di facebook: https://www.facebook.com/SIINFOSRL/, con un target uguale a _blank</td>
+				</tr>
+				<tr class='log' status='warning'>
+					<td class='status warning' title='warning' alt='warning'><i class='material-icons'>warning</i></td>
+					<td class='timestamp'>12:51:58 PM</td>
+					<td class='step-details'>href contente url di maps: https://goo.gl/maps/8GmwbkHQJKwFAqxs7, con un target uguale a _blank</td>
+				</tr>
+				<tr class='log' status='warning'>
+					<td class='status warning' title='warning' alt='warning'><i class='material-icons'>warning</i></td>
+					<td class='timestamp'>12:51:59 PM</td>
+					<td class='step-details'>href contente url di instagram: mailto:info@siinfo.eu, con un target uguale a _blank</td>
+				</tr>
+				<tr class='log' status='warning'>
+					<td class='status warning' title='warning' alt='warning'><i class='material-icons'>warning</i></td>
+					<td class='timestamp'>12:51:59 PM</td>
+					<td class='step-details'>href contente url di instagram: tel:+393801599537, con un target uguale a _blank</td>
+				</tr>
+				<tr class='log' status='warning'>
+					<td class='status warning' title='warning' alt='warning'><i class='material-icons'>warning</i></td>
+					<td class='timestamp'>12:51:59 PM</td>
+					<td class='step-details'>href contente url di instagram: tel:+390669282478, con un target uguale a _blank</td>
+				</tr>
+				<tr class='log' status='warning'>
+					<td class='status warning' title='warning' alt='warning'><i class='material-icons'>warning</i></td>
+					<td class='timestamp'>12:51:59 PM</td>
+					<td class='step-details'>href contente una funzione javaScript: javascript:void(0)</td>
+				</tr>
+				<tr class='log' status='warning'>
+					<td class='status warning' title='warning' alt='warning'><i class='material-icons'>warning</i></td>
+					<td class='timestamp'>12:51:59 PM</td>
+					<td class='step-details'>href contente url di instagram: tel:+393801599537, con un target uguale a _blank</td>
+				</tr>
+				<tr class='log' status='warning'>
+					<td class='status warning' title='warning' alt='warning'><i class='material-icons'>warning</i></td>
+					<td class='timestamp'>12:51:59 PM</td>
+					<td class='step-details'>href contente url di instagram: tel:+0669282478, con un target uguale a _blank</td>
+				</tr>
+				<tr class='log' status='warning'>
+					<td class='status warning' title='warning' alt='warning'><i class='material-icons'>warning</i></td>
+					<td class='timestamp'>12:51:59 PM</td>
+					<td class='step-details'>href contente url di instagram: mailto:info@siinfo.eu, con un target uguale a _blank</td>
+				</tr>
+				<tr class='log' status='warning'>
+					<td class='status warning' title='warning' alt='warning'><i class='material-icons'>warning</i></td>
+					<td class='timestamp'>12:51:59 PM</td>
+					<td class='step-details'>href contente url di maps: https://goo.gl/maps/9AdsXW6BeAef3rCG6, con un target uguale a _blank</td>
+				</tr>
+				<tr class='log' status='warning'>
+					<td class='status warning' title='warning' alt='warning'><i class='material-icons'>warning</i></td>
+					<td class='timestamp'>12:51:59 PM</td>
+					<td class='step-details'>href nullo, testo dell'elemento {class=medium cli-plugin-button cli-plugin-main-button cookie_action_close_header cli_action_button, data-cli_action=accept, id=cookie_action_close_header, role=button, style=display: inline-block; color: rgb(255, 255, 255); background-color: rgb(254, 153, 0);, tabindex=0}</td>
+				</tr>
+				<tr class='log' status='warning'>
+					<td class='status warning' title='warning' alt='warning'><i class='material-icons'>warning</i></td>
+					<td class='timestamp'>12:51:59 PM</td>
+					<td class='step-details'>href nullo, testo dell'elemento {aria-label=Show more, class=cli-privacy-readmore, data-readless-text=Show less, data-readmore-text=Show more, role=button, tabindex=0}</td>
+				</tr>
+				<tr class='log' status='warning'>
+					<td class='status warning' title='warning' alt='warning'><i class='material-icons'>warning</i></td>
+					<td class='timestamp'>12:51:59 PM</td>
+					<td class='step-details'>href nullo, testo dell'elemento {class=cli-nav-link cli-settings-mobile, data-target=necessary, data-toggle=cli-toggle-tab, role=button, tabindex=0}</td>
+				</tr>
+				<tr class='log' status='warning'>
+					<td class='status warning' title='warning' alt='warning'><i class='material-icons'>warning</i></td>
+					<td class='timestamp'>12:51:59 PM</td>
+					<td class='step-details'>href nullo, testo dell'elemento {class=cli-nav-link cli-settings-mobile, data-target=functional, data-toggle=cli-toggle-tab, role=button, tabindex=0}</td>
+				</tr>
+				<tr class='log' status='warning'>
+					<td class='status warning' title='warning' alt='warning'><i class='material-icons'>warning</i></td>
+					<td class='timestamp'>12:51:59 PM</td>
+					<td class='step-details'>href nullo, testo dell'elemento {class=cli-nav-link cli-settings-mobile, data-target=performance, data-toggle=cli-toggle-tab, role=button, tabindex=0}</td>
+				</tr>
+				<tr class='log' status='warning'>
+					<td class='status warning' title='warning' alt='warning'><i class='material-icons'>warning</i></td>
+					<td class='timestamp'>12:51:59 PM</td>
+					<td class='step-details'>href nullo, testo dell'elemento {class=cli-nav-link cli-settings-mobile, data-target=analytics, data-toggle=cli-toggle-tab, role=button, tabindex=0}</td>
+				</tr>
+				<tr class='log' status='warning'>
+					<td class='status warning' title='warning' alt='warning'><i class='material-icons'>warning</i></td>
+					<td class='timestamp'>12:51:59 PM</td>
+					<td class='step-details'>href nullo, testo dell'elemento {class=cli-nav-link cli-settings-mobile, data-target=advertisement, data-toggle=cli-toggle-tab, role=button, tabindex=0}</td>
+				</tr>
+				<tr class='log' status='warning'>
+					<td class='status warning' title='warning' alt='warning'><i class='material-icons'>warning</i></td>
+					<td class='timestamp'>12:51:59 PM</td>
+					<td class='step-details'>href nullo, testo dell'elemento {class=cli-nav-link cli-settings-mobile, data-target=others, data-toggle=cli-toggle-tab, role=button, tabindex=0}</td>
+				</tr>
+				<tr class='log' status='warning'>
+					<td class='status warning' title='warning' alt='warning'><i class='material-icons'>warning</i></td>
+					<td class='timestamp'>12:51:59 PM</td>
+					<td class='step-details'>href nullo, testo dell'elemento {class=wt-cli-privacy-btn cli_setting_save_button wt-cli-privacy-accept-btn cli-btn, data-cli-action=accept, id=wt-cli-privacy-save-btn, role=button, tabindex=0}</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>12:52:00 PM</td>
+					<td class='step-details'>href interno: https://www.siinfo.eu/, con valore target diverso da blank , con una response diversa da 404</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>12:52:00 PM</td>
+					<td class='step-details'>href interno: https://www.siinfo.eu/#, con valore target diverso da blank , con una response diversa da 404</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>12:52:01 PM</td>
+					<td class='step-details'>href interno: https://www.siinfo.eu/, con valore target diverso da blank , con una response diversa da 404</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>12:52:02 PM</td>
+					<td class='step-details'>href interno: https://www.siinfo.eu/services-siinfo/, con valore target diverso da blank , con una response diversa da 404</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>12:52:03 PM</td>
+					<td class='step-details'>href interno: https://www.siinfo.eu/data-analytics-2/, con valore target diverso da blank , con una response diversa da 404</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>12:52:03 PM</td>
+					<td class='step-details'>href interno: https://www.siinfo.eu/data-integration/, con valore target diverso da blank , con una response diversa da 404</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>12:52:04 PM</td>
+					<td class='step-details'>href interno: https://www.siinfo.eu/data-analytics/, con valore target diverso da blank , con una response diversa da 404</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>12:52:05 PM</td>
+					<td class='step-details'>href interno: https://www.siinfo.eu/data-visualization/, con valore target diverso da blank , con una response diversa da 404</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>12:52:05 PM</td>
+					<td class='step-details'>href interno: https://www.siinfo.eu/cloud-solutions/, con valore target diverso da blank , con una response diversa da 404</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>12:52:06 PM</td>
+					<td class='step-details'>href interno: https://www.siinfo.eu/software-lifecycle-testing/, con valore target diverso da blank , con una response diversa da 404</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>12:52:07 PM</td>
+					<td class='step-details'>href interno: https://www.siinfo.eu/web-development/, con valore target diverso da blank , con una response diversa da 404</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>12:52:07 PM</td>
+					<td class='step-details'>href interno: https://www.siinfo.eu/software-development/, con valore target diverso da blank , con una response diversa da 404</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>12:52:08 PM</td>
+					<td class='step-details'>href interno: https://www.siinfo.eu/digital-transformation-consultant/, con valore target diverso da blank , con una response diversa da 404</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>12:52:09 PM</td>
+					<td class='step-details'>href interno: https://www.siinfo.eu/work-with-us/, con valore target diverso da blank , con una response diversa da 404</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>12:52:09 PM</td>
+					<td class='step-details'>href interno: https://www.siinfo.eu/about-us/, con valore target diverso da blank , con una response diversa da 404</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>12:52:10 PM</td>
+					<td class='step-details'>href interno: https://www.siinfo.eu/it/, con valore target diverso da blank , con una response diversa da 404</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>12:52:11 PM</td>
+					<td class='step-details'>href interno: https://www.siinfo.eu/, con valore target diverso da blank , con una response diversa da 404</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>12:52:11 PM</td>
+					<td class='step-details'>href interno: https://www.siinfo.eu/data-analytics-2/, con valore target diverso da blank , con una response diversa da 404</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>12:52:11 PM</td>
+					<td class='step-details'>href interno: https://www.siinfo.eu/cloud-solutions/, con valore target diverso da blank , con una response diversa da 404</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>12:52:11 PM</td>
+					<td class='step-details'>href interno: https://www.siinfo.eu/software-lifecycle-testing/, con valore target diverso da blank , con una response diversa da 404</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>12:52:12 PM</td>
+					<td class='step-details'>href interno: https://www.siinfo.eu/software-development/, con valore target diverso da blank , con una response diversa da 404</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>12:52:12 PM</td>
+					<td class='step-details'>href interno: https://www.siinfo.eu/data-visualization/, con valore target diverso da blank , con una response diversa da 404</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>12:52:12 PM</td>
+					<td class='step-details'>href interno: https://www.siinfo.eu/digital-transformation-consultant/, con valore target diverso da blank , con una response diversa da 404</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>12:52:12 PM</td>
+					<td class='step-details'>href interno: https://www.siinfo.eu/web-development/, con valore target diverso da blank , con una response diversa da 404</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>12:52:13 PM</td>
+					<td class='step-details'>href interno: https://www.siinfo.eu/about-us/, con valore target diverso da blank , con una response diversa da 404</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>12:52:13 PM</td>
+					<td class='step-details'>href interno: https://www.siinfo.eu/data-analytics-2/, con valore target diverso da blank , con una response diversa da 404</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>12:52:13 PM</td>
+					<td class='step-details'>href interno: https://www.siinfo.eu/cloud-solutions/, con valore target diverso da blank , con una response diversa da 404</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>12:52:13 PM</td>
+					<td class='step-details'>href interno: https://www.siinfo.eu/software-lifecycle-testing/, con valore target diverso da blank , con una response diversa da 404</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>12:52:13 PM</td>
+					<td class='step-details'>href interno: https://www.siinfo.eu/web-development/, con valore target diverso da blank , con una response diversa da 404</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>12:52:14 PM</td>
+					<td class='step-details'>href interno: https://www.siinfo.eu/software-development/, con valore target diverso da blank , con una response diversa da 404</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>12:52:14 PM</td>
+					<td class='step-details'>href interno: https://www.siinfo.eu/digital-transformation-consultant//, con valore target diverso da blank , con una response diversa da 404</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>12:52:15 PM</td>
+					<td class='step-details'>href interno: https://siinfo.eu/, con valore target diverso da blank , con una response diversa da 404</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>12:52:15 PM</td>
+					<td class='step-details'>href interno: https://www.siinfo.eu/data-integration/, con valore target diverso da blank , con una response diversa da 404</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>12:52:15 PM</td>
+					<td class='step-details'>href interno: https://www.siinfo.eu/data-analytics/, con valore target diverso da blank , con una response diversa da 404</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>12:52:15 PM</td>
+					<td class='step-details'>href interno: https://www.siinfo.eu/data-visualization/, con valore target diverso da blank , con una response diversa da 404</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>12:52:15 PM</td>
+					<td class='step-details'>href interno: https://www.siinfo.eu/cloud-solutions/, con valore target diverso da blank , con una response diversa da 404</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>12:52:15 PM</td>
+					<td class='step-details'>href interno: https://www.siinfo.eu/software-lifecycle-testing/, con valore target diverso da blank , con una response diversa da 404</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>12:52:16 PM</td>
+					<td class='step-details'>href interno: https://www.siinfo.eu/web-development/, con valore target diverso da blank , con una response diversa da 404</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>12:52:16 PM</td>
+					<td class='step-details'>href interno: https://www.siinfo.eu/software-development/, con valore target diverso da blank , con una response diversa da 404</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>12:52:16 PM</td>
+					<td class='step-details'>href interno: https://www.siinfo.eu/digital-transformation-consultant/, con valore target diverso da blank , con una response diversa da 404</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>12:52:17 PM</td>
+					<td class='step-details'>href interno: https://www.siinfo.eu/privacy-policy, con valore target= _blank , con una response diversa da 404</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>12:52:18 PM</td>
+					<td class='step-details'>href interno: https://www.siinfo.eu/privacy-policy, con valore target diverso da blank , con una response diversa da 404</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>12:52:18 PM</td>
+					<td class='step-details'>href interno: https://www.siinfo.eu/cookie-policy, con valore target diverso da blank , con una response diversa da 404</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active  error' status='error' bdd='false' test-id='2'>
+					<div class='test-heading'>
+						<span class='test-name'>https://gmbiocosmetics.it/</span>
+						<span class='test-time'>Sep 2, 2021 12:52:28 PM</span>
+						<span class='test-status right error'>error</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Sep 2, 2021 12:52:28 PM</span>
+	<span class='label end-time'>Sep 2, 2021 12:54:00 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 1m 31s+267ms</span>
+</div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>12:52:30 PM</td>
+					<td class='step-details'>favicon presente: https://gmbiocosmetics.it/wp-content/uploads/sites/10/2021/07/cropped-favicon_gmbiocosmetics_white_bg-32x32.png</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>12:52:30 PM</td>
+					<td class='step-details'>favicon presente: https://gmbiocosmetics.it/wp-content/uploads/sites/10/2021/07/cropped-favicon_gmbiocosmetics_white_bg-192x192.png</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>12:52:30 PM</td>
+					<td class='step-details'>title presente: Home - GmBioCosmetics</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>12:52:30 PM</td>
+					<td class='step-details'>descrizione presente: Gmbiocosmetics nasce da una profonda passione per la cosmetica naturale e voglia di condividere con voi i segreti custoditi dalla natura</td>
+				</tr>
+				<tr class='log' status='warning'>
+					<td class='status warning' title='warning' alt='warning'><i class='material-icons'>warning</i></td>
+					<td class='timestamp'>12:52:30 PM</td>
+					<td class='step-details'>href nullo, testo dell'elemento {class=mm-navbar__title}</td>
+				</tr>
+				<tr class='log' status='warning'>
+					<td class='status warning' title='warning' alt='warning'><i class='material-icons'>warning</i></td>
+					<td class='timestamp'>12:52:31 PM</td>
+					<td class='step-details'>href contente una funzione javaScript: javascript:;</td>
+				</tr>
+				<tr class='log' status='warning'>
+					<td class='status warning' title='warning' alt='warning'><i class='material-icons'>warning</i></td>
+					<td class='timestamp'>12:52:31 PM</td>
+					<td class='step-details'>href contente una funzione javaScript: javascript:void(0);</td>
+				</tr>
+				<tr class='log' status='warning'>
+					<td class='status warning' title='warning' alt='warning'><i class='material-icons'>warning</i></td>
+					<td class='timestamp'>12:52:31 PM</td>
+					<td class='step-details'>href contente una funzione javaScript: javascript:void(0);</td>
+				</tr>
+				<tr class='log' status='warning'>
+					<td class='status warning' title='warning' alt='warning'><i class='material-icons'>warning</i></td>
+					<td class='timestamp'>12:52:31 PM</td>
+					<td class='step-details'>href contente una funzione javaScript: javascript:void(0)</td>
+				</tr>
+				<tr class='log' status='warning'>
+					<td class='status warning' title='warning' alt='warning'><i class='material-icons'>warning</i></td>
+					<td class='timestamp'>12:52:36 PM</td>
+					<td class='step-details'>href contente url di instagram: tel:+393886416608, con un target uguale a _blank</td>
+				</tr>
+				<tr class='log' status='warning'>
+					<td class='status warning' title='warning' alt='warning'><i class='material-icons'>warning</i></td>
+					<td class='timestamp'>12:52:36 PM</td>
+					<td class='step-details'>href contente url di facebook: https://www.facebook.com/Gmbiocosmetics-100113835656894/, con un target uguale a _blank</td>
+				</tr>
+				<tr class='log' status='warning'>
+					<td class='status warning' title='warning' alt='warning'><i class='material-icons'>warning</i></td>
+					<td class='timestamp'>12:52:36 PM</td>
+					<td class='step-details'>href contente url di instagram: https://www.instagram.com/gmbiocosmetics/, con un target uguale a _blank</td>
+				</tr>
+				<tr class='log' status='warning'>
+					<td class='status warning' title='warning' alt='warning'><i class='material-icons'>warning</i></td>
+					<td class='timestamp'>12:52:36 PM</td>
+					<td class='step-details'>href contente una funzione javaScript: javascript:void(0);</td>
+				</tr>
+				<tr class='log' status='warning'>
+					<td class='status warning' title='warning' alt='warning'><i class='material-icons'>warning</i></td>
+					<td class='timestamp'>12:52:36 PM</td>
+					<td class='step-details'>href nullo, testo dell'elemento {class=medium cli-plugin-button cli-plugin-main-button cookie_action_close_header cli_action_button, data-cli_action=accept, id=cookie_action_close_header, role=button, style=display: inline-block; color: rgb(255, 255, 255); background-color: rgb(255, 163, 189);, tabindex=0}</td>
+				</tr>
+				<tr class='log' status='warning'>
+					<td class='status warning' title='warning' alt='warning'><i class='material-icons'>warning</i></td>
+					<td class='timestamp'>12:52:36 PM</td>
+					<td class='step-details'>href nullo, testo dell'elemento {aria-label=Mostra altro, class=cli-privacy-readmore, data-readless-text=Mostra meno, data-readmore-text=Mostra altro, role=button, tabindex=0}</td>
+				</tr>
+				<tr class='log' status='warning'>
+					<td class='status warning' title='warning' alt='warning'><i class='material-icons'>warning</i></td>
+					<td class='timestamp'>12:52:36 PM</td>
+					<td class='step-details'>href nullo, testo dell'elemento {class=cli-nav-link cli-settings-mobile, data-target=necessary, data-toggle=cli-toggle-tab, role=button, tabindex=0}</td>
+				</tr>
+				<tr class='log' status='warning'>
+					<td class='status warning' title='warning' alt='warning'><i class='material-icons'>warning</i></td>
+					<td class='timestamp'>12:52:36 PM</td>
+					<td class='step-details'>href nullo, testo dell'elemento {class=cli-nav-link cli-settings-mobile, data-target=functional, data-toggle=cli-toggle-tab, role=button, tabindex=0}</td>
+				</tr>
+				<tr class='log' status='warning'>
+					<td class='status warning' title='warning' alt='warning'><i class='material-icons'>warning</i></td>
+					<td class='timestamp'>12:52:37 PM</td>
+					<td class='step-details'>href nullo, testo dell'elemento {class=cli-nav-link cli-settings-mobile, data-target=performance, data-toggle=cli-toggle-tab, role=button, tabindex=0}</td>
+				</tr>
+				<tr class='log' status='warning'>
+					<td class='status warning' title='warning' alt='warning'><i class='material-icons'>warning</i></td>
+					<td class='timestamp'>12:52:37 PM</td>
+					<td class='step-details'>href nullo, testo dell'elemento {class=cli-nav-link cli-settings-mobile, data-target=analytics, data-toggle=cli-toggle-tab, role=button, tabindex=0}</td>
+				</tr>
+				<tr class='log' status='warning'>
+					<td class='status warning' title='warning' alt='warning'><i class='material-icons'>warning</i></td>
+					<td class='timestamp'>12:52:37 PM</td>
+					<td class='step-details'>href nullo, testo dell'elemento {class=cli-nav-link cli-settings-mobile, data-target=advertisement, data-toggle=cli-toggle-tab, role=button, tabindex=0}</td>
+				</tr>
+				<tr class='log' status='warning'>
+					<td class='status warning' title='warning' alt='warning'><i class='material-icons'>warning</i></td>
+					<td class='timestamp'>12:52:37 PM</td>
+					<td class='step-details'>href nullo, testo dell'elemento {class=cli-nav-link cli-settings-mobile, data-target=others, data-toggle=cli-toggle-tab, role=button, tabindex=0}</td>
+				</tr>
+				<tr class='log' status='warning'>
+					<td class='status warning' title='warning' alt='warning'><i class='material-icons'>warning</i></td>
+					<td class='timestamp'>12:52:37 PM</td>
+					<td class='step-details'>href nullo, testo dell'elemento {class=wt-cli-privacy-btn cli_setting_save_button wt-cli-privacy-accept-btn cli-btn, data-cli-action=accept, id=wt-cli-privacy-save-btn, role=button, tabindex=0}</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>12:52:37 PM</td>
+					<td class='step-details'>href interno: https://gmbiocosmetics.it/, con valore target diverso da blank , con una response diversa da 404</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>12:52:37 PM</td>
+					<td class='step-details'>href interno: https://gmbiocosmetics.it/shop/, con valore target diverso da blank , con una response diversa da 404</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>12:52:38 PM</td>
+					<td class='step-details'>href interno: https://gmbiocosmetics.it/chi-siamo/, con valore target diverso da blank , con una response diversa da 404</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>12:52:39 PM</td>
+					<td class='step-details'>href interno: https://gmbiocosmetics.it/contattaci/, con valore target diverso da blank , con una response diversa da 404</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>12:52:40 PM</td>
+					<td class='step-details'>href interno: https://gmbiocosmetics.it/#tbay-mobile-menu-navbar, con valore target diverso da blank , con una response diversa da 404</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>12:52:40 PM</td>
+					<td class='step-details'>href interno: https://gmbiocosmetics.it/#page, con valore target diverso da blank , con una response diversa da 404</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>12:52:40 PM</td>
+					<td class='step-details'>href interno: https://gmbiocosmetics.it/, con valore target diverso da blank , con una response diversa da 404</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>12:52:40 PM</td>
+					<td class='step-details'>href interno: https://gmbiocosmetics.it/, con valore target diverso da blank , con una response diversa da 404</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>12:52:40 PM</td>
+					<td class='step-details'>href interno: https://gmbiocosmetics.it/shop/, con valore target diverso da blank , con una response diversa da 404</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>12:52:40 PM</td>
+					<td class='step-details'>href interno: https://gmbiocosmetics.it/#, con valore target diverso da blank , con una response diversa da 404</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>12:52:41 PM</td>
+					<td class='step-details'>href interno: https://gmbiocosmetics.it/, con valore target diverso da blank , con una response diversa da 404</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>12:52:41 PM</td>
+					<td class='step-details'>href interno: https://gmbiocosmetics.it/shop/, con valore target diverso da blank , con una response diversa da 404</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>12:52:42 PM</td>
+					<td class='step-details'>href interno: https://gmbiocosmetics.it/lista-dei-desideri/, con valore target diverso da blank , con una response diversa da 404</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>12:52:42 PM</td>
+					<td class='step-details'>href interno: https://gmbiocosmetics.it/my-account/, con valore target diverso da blank , con una response diversa da 404</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>12:52:43 PM</td>
+					<td class='step-details'>href interno: https://gmbiocosmetics.it/, con valore target diverso da blank , con una response diversa da 404</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>12:52:43 PM</td>
+					<td class='step-details'>href interno: https://gmbiocosmetics.it/lista-dei-desideri/, con valore target diverso da blank , con una response diversa da 404</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>12:52:44 PM</td>
+					<td class='step-details'>href interno: https://gmbiocosmetics.it/shop/, con valore target diverso da blank , con una response diversa da 404</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>12:52:44 PM</td>
+					<td class='step-details'>href interno: https://gmbiocosmetics.it/my-account/, con valore target diverso da blank , con una response diversa da 404</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>12:52:45 PM</td>
+					<td class='step-details'>href interno: https://gmbiocosmetics.it/categoria-prodotto/cura-della-pelle/, con valore target diverso da blank , con una response diversa da 404</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>12:52:46 PM</td>
+					<td class='step-details'>href interno: https://gmbiocosmetics.it/categoria-prodotto/capelli/, con valore target diverso da blank , con una response diversa da 404</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>12:52:48 PM</td>
+					<td class='step-details'>href interno: https://gmbiocosmetics.it/categoria-prodotto/capelli/balsamo/, con valore target diverso da blank , con una response diversa da 404</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>12:52:48 PM</td>
+					<td class='step-details'>href interno: https://gmbiocosmetics.it/categoria-prodotto/capelli/maschere-capelli/, con valore target diverso da blank , con una response diversa da 404</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>12:52:49 PM</td>
+					<td class='step-details'>href interno: https://gmbiocosmetics.it/categoria-prodotto/capelli/shampoo/, con valore target diverso da blank , con una response diversa da 404</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>12:52:50 PM</td>
+					<td class='step-details'>href interno: https://gmbiocosmetics.it/categoria-prodotto/capelli/styling/, con valore target diverso da blank , con una response diversa da 404</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>12:52:51 PM</td>
+					<td class='step-details'>href interno: https://gmbiocosmetics.it/categoria-prodotto/corpo/, con valore target diverso da blank , con una response diversa da 404</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>12:52:51 PM</td>
+					<td class='step-details'>href interno: https://gmbiocosmetics.it/categoria-prodotto/corpo/cellulite-e-smagliante/, con valore target diverso da blank , con una response diversa da 404</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>12:52:52 PM</td>
+					<td class='step-details'>href interno: https://gmbiocosmetics.it/categoria-prodotto/corpo/creme-corpo/, con valore target diverso da blank , con una response diversa da 404</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>12:52:53 PM</td>
+					<td class='step-details'>href interno: https://gmbiocosmetics.it/categoria-prodotto/corpo/deodoranti/, con valore target diverso da blank , con una response diversa da 404</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>12:52:54 PM</td>
+					<td class='step-details'>href interno: https://gmbiocosmetics.it/categoria-prodotto/corpo/integratori/, con valore target diverso da blank , con una response diversa da 404</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>12:52:55 PM</td>
+					<td class='step-details'>href interno: https://gmbiocosmetics.it/categoria-prodotto/corpo/oli-e-scrub-corpo/, con valore target diverso da blank , con una response diversa da 404</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>12:52:57 PM</td>
+					<td class='step-details'>href interno: https://gmbiocosmetics.it/categoria-prodotto/corpo/solari/, con valore target diverso da blank , con una response diversa da 404</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>12:52:57 PM</td>
+					<td class='step-details'>href interno: https://gmbiocosmetics.it/categoria-prodotto/viso/, con valore target diverso da blank , con una response diversa da 404</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>12:52:58 PM</td>
+					<td class='step-details'>href interno: https://gmbiocosmetics.it/categoria-prodotto/viso/anti-rughe/, con valore target diverso da blank , con una response diversa da 404</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>12:52:59 PM</td>
+					<td class='step-details'>href interno: https://gmbiocosmetics.it/categoria-prodotto/viso/contorno-occhi/, con valore target diverso da blank , con una response diversa da 404</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>12:53:00 PM</td>
+					<td class='step-details'>href interno: https://gmbiocosmetics.it/categoria-prodotto/viso/creme-viso/, con valore target diverso da blank , con una response diversa da 404</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>12:53:01 PM</td>
+					<td class='step-details'>href interno: https://gmbiocosmetics.it/categoria-prodotto/viso/detergenti/, con valore target diverso da blank , con una response diversa da 404</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>12:53:02 PM</td>
+					<td class='step-details'>href interno: https://gmbiocosmetics.it/categoria-prodotto/viso/labbra/, con valore target diverso da blank , con una response diversa da 404</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>12:53:03 PM</td>
+					<td class='step-details'>href interno: https://gmbiocosmetics.it/categoria-prodotto/viso/maschere/, con valore target diverso da blank , con una response diversa da 404</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>12:53:04 PM</td>
+					<td class='step-details'>href interno: https://gmbiocosmetics.it/categoria-prodotto/viso/sieri-viso/, con valore target diverso da blank , con una response diversa da 404</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>12:53:04 PM</td>
+					<td class='step-details'>href interno: https://gmbiocosmetics.it/categoria-prodotto/viso/struccanti-e-tonici/, con valore target diverso da blank , con una response diversa da 404</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>12:53:05 PM</td>
+					<td class='step-details'>href interno: https://gmbiocosmetics.it/, con valore target diverso da blank , con una response diversa da 404</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>12:53:05 PM</td>
+					<td class='step-details'>href interno: https://gmbiocosmetics.it/shop/, con valore target diverso da blank , con una response diversa da 404</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>12:53:05 PM</td>
+					<td class='step-details'>href interno: https://gmbiocosmetics.it/chi-siamo/, con valore target diverso da blank , con una response diversa da 404</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>12:53:06 PM</td>
+					<td class='step-details'>href interno: https://gmbiocosmetics.it/contattaci/, con valore target diverso da blank , con una response diversa da 404</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>12:53:07 PM</td>
+					<td class='step-details'>href interno: https://gmbiocosmetics.it/shop/?swoof=1&product_cat=alkemilla, con valore target diverso da blank , con una response diversa da 404</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>12:53:07 PM</td>
+					<td class='step-details'>href interno: https://gmbiocosmetics.it/shop/?swoof=1&product_cat=gyada, con valore target diverso da blank , con una response diversa da 404</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>12:53:08 PM</td>
+					<td class='step-details'>href interno: https://gmbiocosmetics.it/sconti-flash/, con valore target diverso da blank , con una rispose 404</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>12:53:09 PM</td>
+					<td class='step-details'>href interno: https://gmbiocosmetics.it/shop/?swoof=1&product_cat=corpo/, con valore target diverso da blank , con una response diversa da 404</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>12:53:10 PM</td>
+					<td class='step-details'>href interno: https://gmbiocosmetics.it/shop/?swoof=1&product_cat=creme-corpo, con valore target diverso da blank , con una response diversa da 404</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>12:53:11 PM</td>
+					<td class='step-details'>href interno: https://gmbiocosmetics.it/shop/?swoof=1&product_cat=capelli, con valore target diverso da blank , con una response diversa da 404</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>12:53:12 PM</td>
+					<td class='step-details'>href interno: https://gmbiocosmetics.it/shop/?swoof=1&product_cat=maschere, con valore target diverso da blank , con una response diversa da 404</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>12:53:13 PM</td>
+					<td class='step-details'>href interno: https://gmbiocosmetics.it/shop/?swoof=1&product_cat=solari, con valore target diverso da blank , con una response diversa da 404</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>12:53:14 PM</td>
+					<td class='step-details'>href interno: https://gmbiocosmetics.it/shop/?swoof=1&product_cat=oli-e-scrub-corpo, con valore target diverso da blank , con una response diversa da 404</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>12:53:14 PM</td>
+					<td class='step-details'>href interno: https://gmbiocosmetics.it/categoria-prodotto/corpo/, con valore target diverso da blank , con una response diversa da 404</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>12:53:14 PM</td>
+					<td class='step-details'>href interno: https://gmbiocosmetics.it/categoria-prodotto/corpo/, con valore target diverso da blank , con una response diversa da 404</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>12:53:14 PM</td>
+					<td class='step-details'>href interno: https://gmbiocosmetics.it/categoria-prodotto/capelli/, con valore target diverso da blank , con una response diversa da 404</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>12:53:14 PM</td>
+					<td class='step-details'>href interno: https://gmbiocosmetics.it/categoria-prodotto/capelli/, con valore target diverso da blank , con una response diversa da 404</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>12:53:15 PM</td>
+					<td class='step-details'>href interno: https://gmbiocosmetics.it/categoria-prodotto/viso/, con valore target diverso da blank , con una response diversa da 404</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>12:53:15 PM</td>
+					<td class='step-details'>href interno: https://gmbiocosmetics.it/categoria-prodotto/viso/, con valore target diverso da blank , con una response diversa da 404</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>12:53:16 PM</td>
+					<td class='step-details'>href interno: https://gmbiocosmetics.it/tag-prodotto/aloe/, con valore target diverso da blank , con una response diversa da 404</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>12:53:16 PM</td>
+					<td class='step-details'>href interno: https://gmbiocosmetics.it/tag-prodotto/aloe/, con valore target diverso da blank , con una response diversa da 404</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>12:53:17 PM</td>
+					<td class='step-details'>href interno: https://gmbiocosmetics.it/tag-prodotto/cocco/, con valore target diverso da blank , con una response diversa da 404</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>12:53:17 PM</td>
+					<td class='step-details'>href interno: https://gmbiocosmetics.it/tag-prodotto/cocco/, con valore target diverso da blank , con una response diversa da 404</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>12:53:17 PM</td>
+					<td class='step-details'>href interno: https://gmbiocosmetics.it/tag-prodotto/crema/, con valore target diverso da blank , con una response diversa da 404</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>12:53:18 PM</td>
+					<td class='step-details'>href interno: https://gmbiocosmetics.it/tag-prodotto/crema/, con valore target diverso da blank , con una response diversa da 404</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>12:53:19 PM</td>
+					<td class='step-details'>href interno: https://gmbiocosmetics.it/tag-prodotto/purificante/, con valore target diverso da blank , con una response diversa da 404</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>12:53:20 PM</td>
+					<td class='step-details'>href interno: https://gmbiocosmetics.it/tag-prodotto/purificante/, con valore target diverso da blank , con una response diversa da 404</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>12:53:20 PM</td>
+					<td class='step-details'>href interno: https://gmbiocosmetics.it/tag-prodotto/spray/, con valore target diverso da blank , con una response diversa da 404</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>12:53:21 PM</td>
+					<td class='step-details'>href interno: https://gmbiocosmetics.it/tag-prodotto/spray/, con valore target diverso da blank , con una response diversa da 404</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>12:53:21 PM</td>
+					<td class='step-details'>href interno: https://gmbiocosmetics.it/tag-prodotto/spray/, con valore target diverso da blank , con una response diversa da 404</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>12:53:21 PM</td>
+					<td class='step-details'>href interno: https://gmbiocosmetics.it/tag-prodotto/spray/, con valore target diverso da blank , con una response diversa da 404</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>12:53:21 PM</td>
+					<td class='step-details'>href interno: https://gmbiocosmetics.it/prodotto/body-slim/, con valore target diverso da blank , con una response diversa da 404</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>12:53:22 PM</td>
+					<td class='step-details'>href interno: https://gmbiocosmetics.it/?add-to-cart=7875, con valore target diverso da blank , con una response diversa da 404</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>12:53:24 PM</td>
+					<td class='step-details'>href interno: https://gmbiocosmetics.it/?add_to_wishlist=7875, con valore target diverso da blank , con una response diversa da 404</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>12:53:24 PM</td>
+					<td class='step-details'>href interno: https://gmbiocosmetics.it/#, con valore target diverso da blank , con una response diversa da 404</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>12:53:24 PM</td>
+					<td class='step-details'>href interno: https://gmbiocosmetics.it/prodotto/body-slim/, con valore target diverso da blank , con una response diversa da 404</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>12:53:25 PM</td>
+					<td class='step-details'>href interno: https://gmbiocosmetics.it/prodotto/crema-tea-tree/, con valore target diverso da blank , con una response diversa da 404</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>12:53:26 PM</td>
+					<td class='step-details'>href interno: https://gmbiocosmetics.it/?add-to-cart=7817, con valore target diverso da blank , con una response diversa da 404</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>12:53:27 PM</td>
+					<td class='step-details'>href interno: https://gmbiocosmetics.it/?add_to_wishlist=7817, con valore target diverso da blank , con una response diversa da 404</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>12:53:28 PM</td>
+					<td class='step-details'>href interno: https://gmbiocosmetics.it/#, con valore target diverso da blank , con una response diversa da 404</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>12:53:28 PM</td>
+					<td class='step-details'>href interno: https://gmbiocosmetics.it/prodotto/crema-tea-tree/, con valore target diverso da blank , con una response diversa da 404</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>12:53:28 PM</td>
+					<td class='step-details'>href interno: https://gmbiocosmetics.it/prodotto/lozione-per-il-corpo-allolio-di-cocco/, con valore target diverso da blank , con una response diversa da 404</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>12:53:29 PM</td>
+					<td class='step-details'>href interno: https://gmbiocosmetics.it/?add-to-cart=7848, con valore target diverso da blank , con una response diversa da 404</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>12:53:30 PM</td>
+					<td class='step-details'>href interno: https://gmbiocosmetics.it/?add_to_wishlist=7848, con valore target diverso da blank , con una response diversa da 404</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>12:53:30 PM</td>
+					<td class='step-details'>href interno: https://gmbiocosmetics.it/#, con valore target diverso da blank , con una response diversa da 404</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>12:53:31 PM</td>
+					<td class='step-details'>href interno: https://gmbiocosmetics.it/prodotto/lozione-per-il-corpo-allolio-di-cocco/, con valore target diverso da blank , con una response diversa da 404</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>12:53:31 PM</td>
+					<td class='step-details'>href interno: https://gmbiocosmetics.it/prodotto/siero-bioattivo-uniformante/, con valore target diverso da blank , con una response diversa da 404</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>12:53:32 PM</td>
+					<td class='step-details'>href interno: https://gmbiocosmetics.it/?add-to-cart=8978, con valore target diverso da blank , con una response diversa da 404</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>12:53:33 PM</td>
+					<td class='step-details'>href interno: https://gmbiocosmetics.it/?add_to_wishlist=8978, con valore target diverso da blank , con una response diversa da 404</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>12:53:34 PM</td>
+					<td class='step-details'>href interno: https://gmbiocosmetics.it/#, con valore target diverso da blank , con una response diversa da 404</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>12:53:34 PM</td>
+					<td class='step-details'>href interno: https://gmbiocosmetics.it/prodotto/siero-bioattivo-uniformante/, con valore target diverso da blank , con una response diversa da 404</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>12:53:35 PM</td>
+					<td class='step-details'>href interno: https://gmbiocosmetics.it/prodotto/olio-corpo-smagliature/, con valore target diverso da blank , con una response diversa da 404</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>12:53:36 PM</td>
+					<td class='step-details'>href interno: https://gmbiocosmetics.it/?add-to-cart=8556, con valore target diverso da blank , con una response diversa da 404</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>12:53:37 PM</td>
+					<td class='step-details'>href interno: https://gmbiocosmetics.it/?add_to_wishlist=8556, con valore target diverso da blank , con una response diversa da 404</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>12:53:37 PM</td>
+					<td class='step-details'>href interno: https://gmbiocosmetics.it/#, con valore target diverso da blank , con una response diversa da 404</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>12:53:37 PM</td>
+					<td class='step-details'>href interno: https://gmbiocosmetics.it/prodotto/olio-corpo-smagliature/, con valore target diverso da blank , con una response diversa da 404</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>12:53:37 PM</td>
+					<td class='step-details'>href interno: https://gmbiocosmetics.it/shop/, con valore target diverso da blank , con una response diversa da 404</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>12:53:39 PM</td>
+					<td class='step-details'>href interno: https://gmbiocosmetics.it/my-account, con valore target diverso da blank , con una response diversa da 404</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>12:53:39 PM</td>
+					<td class='step-details'>href interno: https://gmbiocosmetics.it/my-account/, con valore target diverso da blank , con una response diversa da 404</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>12:53:40 PM</td>
+					<td class='step-details'>href interno: https://gmbiocosmetics.it/cart/, con valore target diverso da blank , con una response diversa da 404</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>12:53:41 PM</td>
+					<td class='step-details'>href interno: https://gmbiocosmetics.it/checkout/, con valore target diverso da blank , con una response diversa da 404</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>12:53:42 PM</td>
+					<td class='step-details'>href interno: https://gmbiocosmetics.it/spedizioni/, con valore target diverso da blank , con una response diversa da 404</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>12:53:43 PM</td>
+					<td class='step-details'>href interno: https://gmbiocosmetics.it/privacy-policy/, con valore target diverso da blank , con una response diversa da 404</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>12:53:44 PM</td>
+					<td class='step-details'>href interno: https://gmbiocosmetics.it/termini-e-condizioni-dacquisto/, con valore target diverso da blank , con una response diversa da 404</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>12:53:45 PM</td>
+					<td class='step-details'>href interno: https://gmbiocosmetics.it/tag-prodotto/acqua/, con valore target diverso da blank , con una response diversa da 404</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>12:53:46 PM</td>
+					<td class='step-details'>href interno: https://gmbiocosmetics.it/tag-prodotto/aloe/, con valore target diverso da blank , con una response diversa da 404</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>12:53:47 PM</td>
+					<td class='step-details'>href interno: https://gmbiocosmetics.it/tag-prodotto/anti-prurito/, con valore target diverso da blank , con una response diversa da 404</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>12:53:47 PM</td>
+					<td class='step-details'>href interno: https://gmbiocosmetics.it/tag-prodotto/anticellulite/, con valore target diverso da blank , con una response diversa da 404</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>12:53:49 PM</td>
+					<td class='step-details'>href interno: https://gmbiocosmetics.it/tag-prodotto/baby/, con valore target diverso da blank , con una response diversa da 404</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>12:53:49 PM</td>
+					<td class='step-details'>href interno: https://gmbiocosmetics.it/tag-prodotto/bava-di-lumaca/, con valore target diverso da blank , con una response diversa da 404</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>12:53:50 PM</td>
+					<td class='step-details'>href interno: https://gmbiocosmetics.it/tag-prodotto/caffe/, con valore target diverso da blank , con una response diversa da 404</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>12:53:50 PM</td>
+					<td class='step-details'>href interno: https://gmbiocosmetics.it/tag-prodotto/cocco/, con valore target diverso da blank , con una response diversa da 404</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>12:53:50 PM</td>
+					<td class='step-details'>href interno: https://gmbiocosmetics.it/tag-prodotto/crema/, con valore target diverso da blank , con una response diversa da 404</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>12:53:51 PM</td>
+					<td class='step-details'>href interno: https://gmbiocosmetics.it/tag-prodotto/fango/, con valore target diverso da blank , con una response diversa da 404</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>12:53:52 PM</td>
+					<td class='step-details'>href interno: https://gmbiocosmetics.it/tag-prodotto/gel/, con valore target diverso da blank , con una response diversa da 404</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>12:53:53 PM</td>
+					<td class='step-details'>href interno: https://gmbiocosmetics.it/tag-prodotto/idratanti/, con valore target diverso da blank , con una response diversa da 404</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>12:53:54 PM</td>
+					<td class='step-details'>href interno: https://gmbiocosmetics.it/tag-prodotto/intimo/, con valore target diverso da blank , con una response diversa da 404</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>12:53:55 PM</td>
+					<td class='step-details'>href interno: https://gmbiocosmetics.it/tag-prodotto/micellare/, con valore target diverso da blank , con una response diversa da 404</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>12:53:55 PM</td>
+					<td class='step-details'>href interno: https://gmbiocosmetics.it/tag-prodotto/oil/, con valore target diverso da blank , con una response diversa da 404</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>12:53:56 PM</td>
+					<td class='step-details'>href interno: https://gmbiocosmetics.it/tag-prodotto/pappa-reale/, con valore target diverso da blank , con una response diversa da 404</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>12:53:58 PM</td>
+					<td class='step-details'>href interno: https://gmbiocosmetics.it/tag-prodotto/propoli/, con valore target diverso da blank , con una response diversa da 404</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>12:53:58 PM</td>
+					<td class='step-details'>href interno: https://gmbiocosmetics.it/tag-prodotto/purificante/, con valore target diverso da blank , con una response diversa da 404</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>12:53:59 PM</td>
+					<td class='step-details'>href interno: https://gmbiocosmetics.it/tag-prodotto/restauro/, con valore target diverso da blank , con una response diversa da 404</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>12:54:00 PM</td>
+					<td class='step-details'>href interno: https://gmbiocosmetics.it/tag-prodotto/sali-del-mar-morto/, con valore target diverso da blank , con una response diversa da 404</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>12:54:00 PM</td>
+					<td class='step-details'>href interno: https://gmbiocosmetics.it/tag-prodotto/spray/, con valore target diverso da blank , con una response diversa da 404</td>
+				</tr>
+				<tr class='log' status='error'>
+					<td class='status error' title='error' alt='error'><i class='material-icons'>error</i></td>
+					<td class='timestamp'>12:54:00 PM</td>
+					<td class='step-details'>href esterno: https://www.siinfo.eu/</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active  warning' status='warning' bdd='false' test-id='3'>
+					<div class='test-heading'>
+						<span class='test-name'>https://www.siinfo.eu/it</span>
+						<span class='test-time'>Sep 2, 2021 12:54:10 PM</span>
+						<span class='test-status right warning'>warning</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Sep 2, 2021 12:54:10 PM</span>
+	<span class='label end-time'>Sep 2, 2021 12:54:31 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 21s+397ms</span>
+</div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>12:54:10 PM</td>
+					<td class='step-details'>favicon presente: https://www.siinfo.eu/wp-content/uploads/sites/4/2021/05/cropped-siinfo_logo_bg-32x32.png</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>12:54:10 PM</td>
+					<td class='step-details'>favicon presente: https://www.siinfo.eu/wp-content/uploads/sites/4/2021/05/cropped-siinfo_logo_bg-192x192.png</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>12:54:11 PM</td>
+					<td class='step-details'>title presente: SIINFO : Data In Emotion</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>12:54:11 PM</td>
+					<td class='step-details'>descrizione presente: Ti aiutiamo a sfruttare la potenza dei metodi moderni per estrarre la conoscenza da tutti i tuoi dati per prendere decisioni aziendali</td>
+				</tr>
+				<tr class='log' status='warning'>
+					<td class='status warning' title='warning' alt='warning'><i class='material-icons'>warning</i></td>
+					<td class='timestamp'>12:54:11 PM</td>
+					<td class='step-details'>href contente url di instagram: tel:+393801599537, con un target uguale a _blank</td>
+				</tr>
+				<tr class='log' status='warning'>
+					<td class='status warning' title='warning' alt='warning'><i class='material-icons'>warning</i></td>
+					<td class='timestamp'>12:54:11 PM</td>
+					<td class='step-details'>href contente url di instagram: mailto:info@siinfo.eu, con un target uguale a _blank</td>
+				</tr>
+				<tr class='log' status='warning'>
+					<td class='status warning' title='warning' alt='warning'><i class='material-icons'>warning</i></td>
+					<td class='timestamp'>12:54:11 PM</td>
+					<td class='step-details'>href contente url di linkedin: https://it.linkedin.com/company/siinfo, con un target uguale a _blank</td>
+				</tr>
+				<tr class='log' status='warning'>
+					<td class='status warning' title='warning' alt='warning'><i class='material-icons'>warning</i></td>
+					<td class='timestamp'>12:54:11 PM</td>
+					<td class='step-details'>href contente url di facebook: https://www.facebook.com/SIINFOSRL/, con un target uguale a _blank</td>
+				</tr>
+				<tr class='log' status='warning'>
+					<td class='status warning' title='warning' alt='warning'><i class='material-icons'>warning</i></td>
+					<td class='timestamp'>12:54:13 PM</td>
+					<td class='step-details'>href contente url di linkedin: https://it.linkedin.com/company/siinfo, con un target uguale a _blank</td>
+				</tr>
+				<tr class='log' status='warning'>
+					<td class='status warning' title='warning' alt='warning'><i class='material-icons'>warning</i></td>
+					<td class='timestamp'>12:54:13 PM</td>
+					<td class='step-details'>href contente url di facebook: https://www.facebook.com/SIINFOSRL/, con un target uguale a _blank</td>
+				</tr>
+				<tr class='log' status='warning'>
+					<td class='status warning' title='warning' alt='warning'><i class='material-icons'>warning</i></td>
+					<td class='timestamp'>12:54:13 PM</td>
+					<td class='step-details'>href contente url di maps: https://goo.gl/maps/8GmwbkHQJKwFAqxs7, con un target uguale a _blank</td>
+				</tr>
+				<tr class='log' status='warning'>
+					<td class='status warning' title='warning' alt='warning'><i class='material-icons'>warning</i></td>
+					<td class='timestamp'>12:54:13 PM</td>
+					<td class='step-details'>href contente url di instagram: mailto:info@siinfo.eu, con un target uguale a _blank</td>
+				</tr>
+				<tr class='log' status='warning'>
+					<td class='status warning' title='warning' alt='warning'><i class='material-icons'>warning</i></td>
+					<td class='timestamp'>12:54:13 PM</td>
+					<td class='step-details'>href contente url di instagram: tel:+393801599537, con un target uguale a _blank</td>
+				</tr>
+				<tr class='log' status='warning'>
+					<td class='status warning' title='warning' alt='warning'><i class='material-icons'>warning</i></td>
+					<td class='timestamp'>12:54:13 PM</td>
+					<td class='step-details'>href contente url di instagram: tel:+390669282478, con un target uguale a _blank</td>
+				</tr>
+				<tr class='log' status='warning'>
+					<td class='status warning' title='warning' alt='warning'><i class='material-icons'>warning</i></td>
+					<td class='timestamp'>12:54:13 PM</td>
+					<td class='step-details'>href contente una funzione javaScript: javascript:void(0)</td>
+				</tr>
+				<tr class='log' status='warning'>
+					<td class='status warning' title='warning' alt='warning'><i class='material-icons'>warning</i></td>
+					<td class='timestamp'>12:54:13 PM</td>
+					<td class='step-details'>href contente url di instagram: tel:+393801599537, con un target uguale a _blank</td>
+				</tr>
+				<tr class='log' status='warning'>
+					<td class='status warning' title='warning' alt='warning'><i class='material-icons'>warning</i></td>
+					<td class='timestamp'>12:54:14 PM</td>
+					<td class='step-details'>href contente url di instagram: tel:+0669282478, con un target uguale a _blank</td>
+				</tr>
+				<tr class='log' status='warning'>
+					<td class='status warning' title='warning' alt='warning'><i class='material-icons'>warning</i></td>
+					<td class='timestamp'>12:54:14 PM</td>
+					<td class='step-details'>href contente url di instagram: mailto:info@siinfo.eu, con un target uguale a _blank</td>
+				</tr>
+				<tr class='log' status='warning'>
+					<td class='status warning' title='warning' alt='warning'><i class='material-icons'>warning</i></td>
+					<td class='timestamp'>12:54:14 PM</td>
+					<td class='step-details'>href contente url di maps: https://goo.gl/maps/9AdsXW6BeAef3rCG6, con un target uguale a _blank</td>
+				</tr>
+				<tr class='log' status='warning'>
+					<td class='status warning' title='warning' alt='warning'><i class='material-icons'>warning</i></td>
+					<td class='timestamp'>12:54:14 PM</td>
+					<td class='step-details'>href nullo, testo dell'elemento {class=medium cli-plugin-button cli-plugin-main-button cookie_action_close_header cli_action_button, data-cli_action=accept, id=cookie_action_close_header, role=button, style=display: inline-block; color: rgb(255, 255, 255); background-color: rgb(254, 153, 0);, tabindex=0}</td>
+				</tr>
+				<tr class='log' status='warning'>
+					<td class='status warning' title='warning' alt='warning'><i class='material-icons'>warning</i></td>
+					<td class='timestamp'>12:54:14 PM</td>
+					<td class='step-details'>href nullo, testo dell'elemento {aria-label=Mostra altro, class=cli-privacy-readmore, data-readless-text=Mostra meno, data-readmore-text=Mostra altro, role=button, tabindex=0}</td>
+				</tr>
+				<tr class='log' status='warning'>
+					<td class='status warning' title='warning' alt='warning'><i class='material-icons'>warning</i></td>
+					<td class='timestamp'>12:54:14 PM</td>
+					<td class='step-details'>href nullo, testo dell'elemento {class=cli-nav-link cli-settings-mobile, data-target=necessari, data-toggle=cli-toggle-tab, role=button, tabindex=0}</td>
+				</tr>
+				<tr class='log' status='warning'>
+					<td class='status warning' title='warning' alt='warning'><i class='material-icons'>warning</i></td>
+					<td class='timestamp'>12:54:14 PM</td>
+					<td class='step-details'>href nullo, testo dell'elemento {class=wt-cli-privacy-btn cli_setting_save_button wt-cli-privacy-accept-btn cli-btn, data-cli-action=accept, id=wt-cli-privacy-save-btn, role=button, tabindex=0}</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>12:54:14 PM</td>
+					<td class='step-details'>href interno: https://www.siinfo.eu/it/, con valore target diverso da blank , con una response diversa da 404</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>12:54:14 PM</td>
+					<td class='step-details'>href interno: https://www.siinfo.eu/it#, con valore target diverso da blank , con una response diversa da 404</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>12:54:15 PM</td>
+					<td class='step-details'>href interno: https://www.siinfo.eu/it/, con valore target diverso da blank , con una response diversa da 404</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>12:54:16 PM</td>
+					<td class='step-details'>href interno: https://www.siinfo.eu/it/servizi/, con valore target diverso da blank , con una response diversa da 404</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>12:54:16 PM</td>
+					<td class='step-details'>href interno: https://www.siinfo.eu/it/data-and-analytics/, con valore target diverso da blank , con una response diversa da 404</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>12:54:17 PM</td>
+					<td class='step-details'>href interno: https://www.siinfo.eu/it/data-integration-it/, con valore target diverso da blank , con una response diversa da 404</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>12:54:17 PM</td>
+					<td class='step-details'>href interno: https://www.siinfo.eu/it/data-analytics-it/, con valore target diverso da blank , con una response diversa da 404</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>12:54:18 PM</td>
+					<td class='step-details'>href interno: https://www.siinfo.eu/it/data-visualization-it/, con valore target diverso da blank , con una response diversa da 404</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>12:54:19 PM</td>
+					<td class='step-details'>href interno: https://www.siinfo.eu/it/soluzioni-cloud/, con valore target diverso da blank , con una response diversa da 404</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>12:54:20 PM</td>
+					<td class='step-details'>href interno: https://www.siinfo.eu/it/area-di-testing/, con valore target diverso da blank , con una response diversa da 404</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>12:54:21 PM</td>
+					<td class='step-details'>href interno: https://www.siinfo.eu/it/web-development-it/, con valore target diverso da blank , con una response diversa da 404</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>12:54:21 PM</td>
+					<td class='step-details'>href interno: https://www.siinfo.eu/it/sviluppo-software/, con valore target diverso da blank , con una response diversa da 404</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>12:54:22 PM</td>
+					<td class='step-details'>href interno: https://www.siinfo.eu/it/manager-dell-innovazione/, con valore target diverso da blank , con una response diversa da 404</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>12:54:22 PM</td>
+					<td class='step-details'>href interno: https://www.siinfo.eu/it/lavora-con-noi/, con valore target diverso da blank , con una response diversa da 404</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>12:54:23 PM</td>
+					<td class='step-details'>href interno: https://www.siinfo.eu/it/chi-siamo/, con valore target diverso da blank , con una response diversa da 404</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>12:54:23 PM</td>
+					<td class='step-details'>href interno: https://www.siinfo.eu/it/, con valore target diverso da blank , con una response diversa da 404</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>12:54:24 PM</td>
+					<td class='step-details'>href interno: https://www.siinfo.eu/, con valore target diverso da blank , con una response diversa da 404</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>12:54:24 PM</td>
+					<td class='step-details'>href interno: https://www.siinfo.eu/it/data-and-analytics/, con valore target diverso da blank , con una response diversa da 404</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>12:54:24 PM</td>
+					<td class='step-details'>href interno: https://www.siinfo.eu/it/soluzioni-cloud/, con valore target diverso da blank , con una response diversa da 404</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>12:54:25 PM</td>
+					<td class='step-details'>href interno: https://www.siinfo.eu/it/area-di-testing/, con valore target diverso da blank , con una response diversa da 404</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>12:54:25 PM</td>
+					<td class='step-details'>href interno: https://www.siinfo.eu/it/sviluppo-software/, con valore target diverso da blank , con una response diversa da 404</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>12:54:25 PM</td>
+					<td class='step-details'>href interno: https://www.siinfo.eu/it/data-visualization-it/, con valore target diverso da blank , con una response diversa da 404</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>12:54:25 PM</td>
+					<td class='step-details'>href interno: https://www.siinfo.eu/it/manager-dell-innovazione/, con valore target diverso da blank , con una response diversa da 404</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>12:54:25 PM</td>
+					<td class='step-details'>href interno: https://www.siinfo.eu/it/web-development-it/, con valore target diverso da blank , con una response diversa da 404</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>12:54:26 PM</td>
+					<td class='step-details'>href interno: https://www.siinfo.eu/it/chi-siamo/, con valore target diverso da blank , con una response diversa da 404</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>12:54:26 PM</td>
+					<td class='step-details'>href interno: https://www.siinfo.eu/it/data-and-analytics/, con valore target diverso da blank , con una response diversa da 404</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>12:54:26 PM</td>
+					<td class='step-details'>href interno: https://www.siinfo.eu/it/soluzioni-cloud/, con valore target diverso da blank , con una response diversa da 404</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>12:54:26 PM</td>
+					<td class='step-details'>href interno: https://www.siinfo.eu/it/area-di-testing/, con valore target diverso da blank , con una response diversa da 404</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>12:54:27 PM</td>
+					<td class='step-details'>href interno: https://www.siinfo.eu/it/web-development-it/, con valore target diverso da blank , con una response diversa da 404</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>12:54:27 PM</td>
+					<td class='step-details'>href interno: https://www.siinfo.eu/it/sviluppo-software/, con valore target diverso da blank , con una response diversa da 404</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>12:54:27 PM</td>
+					<td class='step-details'>href interno: https://www.siinfo.eu/it/manager-dell-innovazione/, con valore target diverso da blank , con una response diversa da 404</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>12:54:27 PM</td>
+					<td class='step-details'>href interno: https://siinfo.eu/it/, con valore target diverso da blank , con una response diversa da 404</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>12:54:28 PM</td>
+					<td class='step-details'>href interno: https://www.siinfo.eu/it/data-integration-it/, con valore target diverso da blank , con una response diversa da 404</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>12:54:28 PM</td>
+					<td class='step-details'>href interno: https://www.siinfo.eu/it/data-analytics-it/, con valore target diverso da blank , con una response diversa da 404</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>12:54:28 PM</td>
+					<td class='step-details'>href interno: https://www.siinfo.eu/it/data-visualization-it/, con valore target diverso da blank , con una response diversa da 404</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>12:54:28 PM</td>
+					<td class='step-details'>href interno: https://www.siinfo.eu/it/soluzioni-cloud/, con valore target diverso da blank , con una response diversa da 404</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>12:54:28 PM</td>
+					<td class='step-details'>href interno: https://www.siinfo.eu/it/area-di-testing/, con valore target diverso da blank , con una response diversa da 404</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>12:54:29 PM</td>
+					<td class='step-details'>href interno: https://www.siinfo.eu/it/web-development-it/, con valore target diverso da blank , con una response diversa da 404</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>12:54:29 PM</td>
+					<td class='step-details'>href interno: https://www.siinfo.eu/it/sviluppo-software/, con valore target diverso da blank , con una response diversa da 404</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>12:54:29 PM</td>
+					<td class='step-details'>href interno: https://www.siinfo.eu/it/manager-dell-innovazione/, con valore target diverso da blank , con una response diversa da 404</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>12:54:29 PM</td>
+					<td class='step-details'>href interno: https://www.siinfo.eu/it/privacy-policy-it/, con valore target= _blank , con una response diversa da 404</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>12:54:30 PM</td>
+					<td class='step-details'>href interno: https://www.siinfo.eu/privacy-policy-it, con valore target diverso da blank , con una response diversa da 404</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>12:54:31 PM</td>
+					<td class='step-details'>href interno: https://www.siinfo.eu/cookie-policy-it, con valore target diverso da blank , con una response diversa da 404</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<!-- subview left -->
+
+	<div class='subview-right left'>
+		<div class='view-summary'>
+			<h5 class='test-name'></h5>
+
+			<div id='step-filters' class="right">
+				<span class="blue-text" status="info" alt="info" title="info"><i class="material-icons">info_outline</i></span>
+				<span class="green-text" status="pass" alt="pass" title="pass"><i class="material-icons">check_circle</i></span>
+				<span class="red-text" status="fail" alt="fail" title="fail"><i class="material-icons">cancel</i></span>
+				<span class="red-text text-darken-4" status="fatal" alt="fatal" title="fatal"><i class="material-icons">cancel</i></span>
+				<span class="pink-text text-lighten-1" status="error" alt="error" title="error"><i class="material-icons">error</i></span>
+				<span class="orange-text" alt="warning" status="warning" title="warning"><i class="material-icons">warning</i></span>
+				<span class="teal-text" status="skip" alt="skip" title="skip"><i class="material-icons">redo</i></span>
+				<span status="clear" alt="Clear filters" title="Clear filters"><i class="material-icons">clear</i></span>
+			</div>
+		</div>
+	</div>
+	<!-- subview right -->
+
+</div>
+<!-- test view -->
+<!-- category view -->
+<!-- exception view -->
+<div id='dashboard-view' class='view hide'>
+	<div class='card-panel transparent np-v'>
+		<h5>Dashboard</h5>
+
+		<div class='row'>
+			<div class='col s2'>
+				<div class='card-panel r'>
+					Tests
+					<div class='panel-lead'>3</div>
+				</div>
+			</div>
+			<div class='col s2'>
+				<div class='card-panel r'>
+					Steps
+					<div class='panel-lead'>285</div>
+				</div>
+			</div>
+			<div class='col s2'>
+				<div class='card-panel r'>
+					Start
+					<div class='panel-lead'>Sep 2, 2021 12:51:43 PM</div>
+				</div>
+			</div>
+			<div class='col s2'>
+				<div class='card-panel r'>
+			 		End
+			 		<div class='panel-lead'>Sep 2, 2021 12:54:31 PM</div>
+				</div>
+			</div>
+			<div class='col s2'>
+				<div class='card-panel r'>
+					Time Taken
+					<div class='panel-lead'>0h 2m 48s+97ms</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- dashboard view -->
+<!-- testrunner-logs view -->
+		</div>
+		<!-- container -->
+
+		<script>
+			var statusGroup = {
+				passParent: 0,
+				failParent: 0,
+				fatalParent: 0,
+				errorParent: 1,
+				warningParent: 2,
+				skipParent: 0,
+				exceptionsParent: 3,
+				
+				passChild: 211,
+				failChild: 0,
+				fatalChild: 0,
+				errorChild: 1,
+				warningChild: 61,
+				skipChild: 0,
+				infoChild: 12,
+				exceptionsChild: 62,
+				
+				passGrandChild: 0,
+				failGrandChild: 0,
+				fatalGrandChild: 0,
+				errorGrandChild: 0,
+				warningGrandChild: 0,
+				skipGrandChild: 0,
+				infoGrandChild: 0,
+				exceptionsGrandChild: 0,
+			};
+		</script>
+		
+			<script src='https://cdn.rawgit.com/anshooarora/extentreports-java/fca20fb7653aade98810546ab96a2a4360e3e712/dist/js/extent.js' type='text/javascript'></script>
+		
+		
+ 		<script type='text/javascript'>
+ 		</script>
+	</body>
+	
+</html>
