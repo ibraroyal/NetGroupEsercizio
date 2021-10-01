@@ -65,6 +65,7 @@ public class BasePage {
 				i--;
 				continue;
 			}
+//skjskjskjks
 //			report social media 2
 			if (valueHREF.contains(URL_FACEBOOK) || valueHREF.contains(URL_LINKEDIN) || valueHREF.contains(URL_MAPS)
 					|| valueHREF.contains(URL_INSTAGRAM)) {
